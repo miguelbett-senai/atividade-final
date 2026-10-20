@@ -1,101 +1,84 @@
-# Requirements: Horta Automática SENAI
+# Requirements: Sistema de Irrigação Automatizada por EC (Fertirrigação)
 
-**Defined:** 2026-10-20
-**Core Value:** Irrigar automaticamente com base na umidade real do solo, mantendo as plantas hidratadas sem intervenção manual — e demonstrando esse controle em tempo real na feira do SENAI.
+**Defined:** 20 de outubro de 2026
+**Core Value:** Manter a condutividade elétrica (EC) da solução de irrigação na faixa ideal, acionando automaticamente a válvula de água para fertirrigação — sem intervenção manual.
 
 ## v1 Requirements
 
-Requirements for initial release. Each maps to roadmap phases.
+Requirements for the initial release. Each maps to a roadmap phase (traceability populated when phases are defined).
 
-### SENS — Sensores
+### Sensors (SENS)
 
-- [ ] **SENS-01**: CLP lê sinal analógico do sensor de umidade do solo ASAIR AM2305B
-- [ ] **SENS-02**: Sistema converte leitura analógica em percentual de umidade do solo
-- [ ] **SENS-03**: Leitura de umidade é atualizada no mínimo a cada 5 segundos
+- [ ] **SENS-01**: Medir a condutividade elétrica (EC) da água com sensor RS-485/Modbus RTU
+- [ ] **SENS-02**: Fornecer leitura de EC com faixa de medição adequada à fertirrigação
 
-### CTRL — Controle (CLP)
+### Communication (COMM)
 
-- [ ] **CTRL-01**: CLP aciona válvula proporcional pneumática quando umidade está abaixo do limiar mínimo
-- [ ] **CTRL-02**: CLP desliga válvula proporcional quando umidade atinge o limiar máximo (alvo)
-- [ ] **CTRL-03**: CLP controla até 3 zonas de irrigação de forma independente
-- [ ] **CTRL-04**: CLP exibe umidade atual e estado da válvula no painel/HMI
+- [ ] **COMM-01**: Transmitir os dados do sensor EC ao CLP via barramento RS-485/Modbus RTU
+- [ ] **COMM-02**: Detectar falha de comunicação com o sensor EC
 
-### IRRG — Irrigação
+### Control (CTRL)
 
-- [ ] **IRRG-01**: Válvula proporcional pneumática regula fluxo de água para o aspersor
-- [ ] **IRRG-02**: Aspersor irriga a zona com água e ar de alta pressão quando válvula está aberta
-- [ ] **IRRG-03**: Sistema não irriga quando umidade está acima do limiar máximo (evita encharcamento)
+- [ ] **CTRL-01**: Receber a leitura de EC no CLP e decidir a abertura ou fecho da válvula
+- [ ] **CTRL-02**: Colocar a válvula em condição segura quando houver falha de comunicação com o sensor
 
-### IFCE — Interface / Operação
+### Actuation / Valve (VALV)
 
-- [ ] **IFCE-01**: Usuário pode definir limiares mínimo e máximo de umidade via painel do CLP
-- [ ] **IFCE-02**: Usuário pode ligar/desligar o sistema manualmente via chave ou botão no CLP
-- [ ] **IFCE-03**: Indicador visual mostra se a irrigação está ativa ou parada
+- [ ] **VALV-01**: Abrir a válvula de água quando EC estiver abaixo do valor mínimo (adicionar água/nutriente)
+- [ ] **VALV-02**: Fechar a válvula quando EC atingir o valor alvo
 
-### SEG — Segurança
+### Demo (DEMO)
 
-- [ ] **SEG-01**: Sistema desliga a válvula em caso de perda de sinal do sensor (falha segura)
-- [ ] **SEG-02**: Alarme ou indicação visual quando sensor está desconectado ou fora de faixa
+- [ ] **DEMO-01**: Operar o sistema com planta e água reais na feira de tecnologia do SENAI
 
 ## v2 Requirements
 
-Deferred to future release. Tracked but not in current roadmap.
+Deferred to a future release. Tracked but not in the current scope.
 
-### APP — Aplicativo / Conectividade
+### pH Control
 
-- **APP-01**: Controle e monitoramento via aplicativo móvel
-- **APP-02**: Histórico de umidade e irrigação em nuvem
-- **APP-03**: Notificações push quando sistema irriga ou falha
+- **PH-01**: Controlar o pH da solução de irrigação além da EC
 
-### ZONES — Mais zonas
+### Scheduling
 
-- **ZONES-01**: Suporte a 4 ou mais zonas de irrigação independentes
-- **ZONES-02**: Diferentes tipos de planta com limiares próprios por zona
+- **SCHED-01**: Irrigação por programação de horário independente do sensor
 
-### WATER — Gestão de água
+### Supervisory
 
-- **WATER-01**: Reservatório automático com nível de água monitorado
-- **WATER-02**: Sistema de reuso ou captação de água da chuva
+- **SUP-01**: Interface gráfica / painel supervisório para acompanhamento remoto
 
 ## Out of Scope
 
-Explicitly excluded. Documented to prevent scope creep.
+Explicitly excluded to prevent scope creep.
 
 | Feature | Reason |
 |---------|--------|
-| Irrigação por app móvel ou nuvem | Fora do escopo da feira; foco no CLP local e demonstração ao vivo |
-| Mais de 3 zonas | Limita complexidade para viabilizar entrega na feira |
-| Bomba de alta vazão independente | Escopo restrito ao aspersor água/ar com fonte externa |
-| Sistema de reuso de água | Não é requisito da feira; adiciona complexidade hidráulica |
-| Controle climático (temperatura, luminosidade) | Não está no escopo de irrigação do solo |
+| Bomba de injeção de fertilizante separada | A v1 usa a válvula de água disponível; bomba é um custo/complexidade a adicionar depois |
+| Controle de pH | Foco inicial é apenas a EC; pH pode entrar em v2 |
+| Irrigação por horário (sem sensor) | O controle é por leitura de EC, não por temporizador |
+| Interface gráfica / supervisório | A demonstração da feira é local no protótipo |
 
 ## Traceability
 
-Which phases cover which requirements. Updated during roadmap creation.
+Which phases cover which requirements. Updated when roadmap phases are defined.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SENS-01 | Phase 1 | Pending |
-| SENS-02 | Phase 1 | Pending |
-| SENS-03 | Phase 1 | Pending |
-| CTRL-01 | Phase 2 | Pending |
-| CTRL-02 | Phase 2 | Pending |
-| CTRL-03 | Phase 3 | Pending |
-| CTRL-04 | Phase 3 | Pending |
-| IRRG-01 | Phase 2 | Pending |
-| IRRG-02 | Phase 2 | Pending |
-| IRRG-03 | Phase 2 | Pending |
-| IFCE-01 | Phase 3 | Pending |
-| IFCE-02 | Phase 3 | Pending |
-| IFCE-03 | Phase 3 | Pending |
-| SEG-01 | Phase 1 | Pending |
-| SEG-02 | Phase 1 | Pending |
+| SENS-01 | — | Pending |
+| SENS-02 | — | Pending |
+| COMM-01 | — | Pending |
+| COMM-02 | — | Pending |
+| CTRL-01 | — | Pending |
+| CTRL-02 | — | Pending |
+| VALV-01 | — | Pending |
+| VALV-02 | — | Pending |
+| DEMO-01 | — | Pending |
 
 **Coverage:**
-- v1 requirements: 15 total
-- Mapped to phases: 15
-- Unmapped: 0 ✓
+- v1 requirements: 9 total
+- Mapped to phases: 0 (phases/roadmap not yet defined)
+- Unmapped: 9 ⚠️
 
 ---
-*Requirements defined: 2026-10-20*
-*Last updated: 2026-10-20 after initial definition*
+*Requirements defined: 20 de outubro de 2026*
+*Last updated: 20 de outubro de 2026 after initial definition*

@@ -1,82 +1,75 @@
-# Horta Automática SENAI — Sistema de Irrigação Automatizada
+# Sistema de Irrigação Automatizada por EC (Fertirrigação)
 
-## What This Is
+## O que isto é
 
-Sistema automatizado de irrigação para horta, projetado para demonstração na feira de tecnologia do SENAI. Usa um CLP como controlador central, um sensor analógico de umidade do solo ASAIR AM2305B para leitura do estado do substrato, uma válvula proporcional pneumática para dosar o fluxo, e um aspersor de água com ar de alta pressão para irrigação das plantas. Escopo inicial: 1 a 3 zonas de irrigação independentes.
+Sistema de automação para irrigação controlada pela condutividade elétrica (EC) da água/solução nutritiva. Sensores de EC com comunicação RS-485/Modbus RTU enviam as leituras a um CLP, que decide abrir ou fechar uma válvula de água para manter a concentração de nutrientes na faixa desejada. É um protótipo para demonstração na feira de tecnologia do SENAI, operando com planta e água reais.
 
-## Core Value
+Projeto do Grupo 4 — UC de Automação Industrial, Etapa 1 (Descrição do projeto e especificação dos componentes).
+Integrantes: Mighel Bett, Miguel Lorenzoni, Artur e Luiz Gustavo.
 
-Irrigar automaticamente com base na umidade real do solo, mantendo as plantas hidratadas sem intervenção manual — e demonstrando esse controle em tempo real na feira do SENAI.
+## Valor central
 
-## Business Context
+Manter a condutividade elétrica (EC) da solução de irrigação na faixa ideal, acionando automaticamente a válvula de água para fertirrigação — sem intervenção manual.
 
-<!-- Opcional — projeto para feira/exibição, não monetizado. Mantido como referência institucional. -->
+## Requisitos
 
-- **Customer**: Visitantes da feira de tecnologia do SENAI e comunidade escolar
-- **Revenue model**: Não se aplica (projeto educacional/demonstrativo)
-- **Success metric**: Sistema demonstra irrigação automática funcional durante a feira, com leitura de umidade e acionamento da válvula/aspersor
-- **Strategy notes**: Demonstrar competência em automação industrial (CLP + sensores analógicos + pneumática proporcional)
+### Validados
 
-## Requirements
+(Nenhum ainda — entregar para validar)
 
-### Validated
+### Ativos (hipóteses até serem enviados e validados)
 
-(None yet — ship to validate)
+- [ ] Medir a condutividade elétrica (EC) da água com sensor RS-485/Modbus RTU
+- [ ] Enviar a leitura de EC ao CLP via barramento RS-485/Modbus RTU
+- [ ] Detectar falha de comunicação com o sensor EC
+- [ ] Decidir, no CLP, abertura ou fecho da válvula com base na leitura de EC (fertirrigação)
+- [ ] Colocar a válvula em condição segura quando houver falha de comunicação com o sensor
+- [ ] Demonstrar o sistema funcionando com planta e água reais na feira do SENAI
 
-### Active
+### Fora do escopo
 
-- [ ] Ler umidade do solo via sensor ASAIR AM2305B (analógico) no CLP
-- [ ] Acionar válvula proporcional pneumática com base na leitura de umidade
-- [ ] Irrigar 1 a 3 zonas independentemente via aspersor de água/ar de alta pressão
-- [ ] Exibir status de umidade e estado da válvula no painel do CLP
-- [ ] Funcionar durante toda a feira sem falhas
+- Controle de pH da solução — foco inicial é apenas a EC
+- Irrigação por programação de horário (sem leitura de sensor) — o controle é por EC
+- Interface gráfica / supervisório — a demonstração é local no protótipo
+- Bomba de injeção de fertilizante separada — a v1 usa a válvula de água disponível
 
-### Out of Scope
+## Contexto
 
-- Irrigação por aplicativo móvel ou nuvem — fora do escopo da feira (foco no CLP local)
-- Mais de 3 zonas de irrigação — limita a complexidade para entrega na feira
-- Bomba de alta vazão ou sistema de reuso de água — escopo restrito ao aspersor água/ar
+Trabalho acadêmico da UC de Automação Industrial (Etapa 1): descrever o projeto, especificar componentes, definir estratégia de automação, desenho inicial e dúvidas. Ainda sem acesso ao edital da feira do SENAI. Nesta etapa não é necessário entregar o programa do CLP pronto nem a montagem completa — apenas planejamento, pesquisa de componentes e verificação de viabilidade.
 
-## Context
+## Restrições
 
-- Feira de tecnologia do SENAI; público inclui estudantes, professores e visitantes técnicos
-- Demonstração ao vivo: o sistema deve ligar a válvula quando o solo estiver seco e desligar quando atingir umidade alvo
-- Hardware: CLP (entrada analógica 4-20 mA ou 0-10 V), sensor ASAIR AM2305B, válvula proporcional pneumática, aspersor de água com ar comprimido de alta pressão
+- **CLP**: já disponível no grupo; o controlador deve ser compatível com RS-485/Modbus RTU ou usar conversor
+- **Sensores EC**: ainda não adquiridos — devem ser RS-485/Modbus RTU (conforme o trabalho)
+- **Válvula**: o grupo possui algumas válvulas; ainda é preciso definir qual usar (tensão, acionamento, vazão, pressão, conexões hidráulicas)
+- **Demo da feira**: deve funcionar com planta e água reais
+- **Entrega Etapa 1**: planejamento, pesquisa de componentes e verificação de viabilidade (sem programa do CLP pronto nem montagem completa)
 
-## Constraints
+## Decisões-chave
 
-- **[Hardware]**: CLP com entrada analógica para sensor ASAIR AM2305B — sensor escolhido pelo usuário
-- **[Hardware]**: Válvula proporcional pneumática — controle proporcional de fluxo, não on/off simples
-- **[Hardware]**: Aspersor de água + ar de alta pressão — necessita fonte de ar comprimido
-- **[Escopo]**: 1 a 3 zonas — limitado para viabilizar entrega na feira
-- **[Prazo]**: Feira do SENAI — escopo enxuto, funcional para demonstração
-
-## Key Decisions
-
-| Decision | Rationale | Outcome |
-|----------|-----------|---------|
-| CLP como controlador central | Automação industrial padrão, robusto para feira | — Pending |
-| Sensor ASAIR AM2305B | Escolhido pelo usuário, leitura analógica de umidade | — Pending |
-| Válvula proporcional pneumática | Controle de fluxo dosado, adequado para irrigação de precisão | — Pending |
-| 1 a 3 zonas | Equilibra demonstração e complexidade para a feira | — Pending |
-
-## Evolution
-
-This document evolves at phase transitions and milestone boundaries.
-
-**After each phase transition** (via `/gsd-transition`):
-1. Requirements invalidated? → Move to Out of Scope with reason
-2. Requirements validated? → Move to Validated with phase reference
-3. New requirements emerged? → Add to Active
-4. Decisions to log? → Add to Key Decisions
-5. "What This Is" still accurate? → Update if drifted
-
-**After each milestone** (via `/gsd-complete-milestone`):
-1. Full review of all sections
-2. Core Value check — still the right priority?
-3. Business Context check (if present) — customer, revenue model, success metric still accurate?
-4. Audit Out of Scope — reasons still valid?
-5. Update Context with current state (users, feedback, metrics)
+| Decisão | Rationale | Outcome |
+|---------|-----------|---------|
+| EC como variável de controle | Permite fertirrigação baseada na concentração de nutrientes | — Pendente |
+| Comunicação RS-485/Modbus RTU | Especificada no trabalho da UC | — Pendente |
+| Lógica de abertura/fecho da válvula | Ainda a definir com o grupo (pensar em fertirrigação) | — Pendente |
 
 ---
-*Last updated: 2026-10-20 after initialization*
+
+*Última atualização: 20 de outubro de 2026 após inicialização*
+
+## Evolução
+
+Este documento evolui em transições de fase e marcos do projeto.
+
+**Após cada transição de fase:**
+1. Requisitos invalidados? → Mover para Fora do Escopo com razão
+2. Requisitos validados? → Mover para Validados com referência de fase
+3. Novos requisitos surgiram? → Adicionar a Ativos
+4. Decisões para registrar? → Adicionar a Decisões-chave
+5. "O que isto é" ainda está preciso? → Atualizar se desviado
+
+**Após cada marco:**
+1. Revisão completa de todas as seções
+2. Verificação do Valor central — ainda é a prioridade correta?
+3. Auditar Fora do Escopo — razões ainda válidas?
+4. Atualizar Contexto com o estado atual

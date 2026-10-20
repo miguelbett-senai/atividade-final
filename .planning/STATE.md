@@ -1,31 +1,9 @@
-# STATE
+# Project State
 
-## Project Reference
+**Current phase:** None — initialization complete; phases/roadmap deferred per user request
+**Core value:** Manter a condutividade elétrica (EC) da solução de irrigação na faixa ideal, acionando automaticamente a válvula de água para fertirrigação — sem intervenção manual
+**Project reference:** .planning/PROJECT.md (updated 20 de outubro de 2026)
 
-See: .planning/PROJECT.md (updated 2026-10-20 after initialization)
+## Next step
 
-**Core value:** Irrigar automaticamente com base na umidade real do solo, mantendo as plantas hidratadas sem intervenção manual — e demonstrando esse controle em tempo real na feira do SENAI.
-**Current focus:** Phase 1 — Sensores & Segurança
-
-## Active Phase
-
-Phase 1 — Sensores & Segurança
-
-## Plans
-
-(None yet — start with `/gsd-plan-phase 1`)
-
-## Decisions
-
-(None yet)
-
-## Blockers
-
-(None yet)
-
-## Metrics
-
-(None yet)
-
----
-*State initialized: 2026-10-20*
+When ready to define phases, run roadmap/phase planning (e.g., `/gsd-plan-phase 1`) to map the 9 v1 requirements to phases and create ROADMAP.md.

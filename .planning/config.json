@@ -1,7 +1,7 @@
 {
-  "mode": "yolo",
-  "granularity": "coarse",
-  "parallelization": false,
+  "mode": "interactive",
+  "granularity": "standard",
+  "parallelization": true,
   "commit_docs": true,
   "model_profile": "inherit",
   "workflow": {
@@ -19,7 +19,7 @@
       {
         "heading": "User Stories & Acceptance Criteria",
         "enabled": true,
-        "source": "REQUIREMENTS.md ## User Stories || REQUIREMENTS.md ## Acceptance Criteria",
+        "source": "REQUIREMENTS.md ## v1 Requirements",
         "fallback": "- Acceptance criteria are covered by the linked requirements and verification evidence."
       },
       {
@@ -40,5 +40,6 @@
         "template": "- Product owner approval pending for {phase_name}."
       }
     ]
-  }
+  },
+  "notes": "Created lightweight during new-project questioning. Phases/roadmap deferred per user request. Adjust settings anytime with /gsd-settings."
 }
