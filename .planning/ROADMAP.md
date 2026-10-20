@@ -16,6 +16,13 @@
 3. Falha de comunicação com o sensor é detectada pelo CLP
 4. Requisitos SENS-01, SENS-02, COMM-01, COMM-02 cobertos e verificados
 
+**Plans:** 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Walking skeleton end-to-end do relatório Etapa 1 (8 itens em nível mínimo)
+- [ ] 01-02-PLAN.md — Especificação técnica aprofundada (CLP, módulos RS-485, sensor EC, alimentação)
+- [ ] 01-03-PLAN.md — Estratégia de automação, diagrama de interligação, mapeamento Modbus, dúvidas e viabilidade
+
 **Requirements mapped:** SENS-01, SENS-02, COMM-01, COMM-02
 
 ---
