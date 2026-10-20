@@ -64,20 +64,20 @@ Which phases cover which requirements. Updated when roadmap phases are defined.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SENS-01 | — | Pending |
-| SENS-02 | — | Pending |
-| COMM-01 | — | Pending |
-| COMM-02 | — | Pending |
-| CTRL-01 | — | Pending |
-| CTRL-02 | — | Pending |
-| VALV-01 | — | Pending |
-| VALV-02 | — | Pending |
-| DEMO-01 | — | Pending |
+| SENS-01 | Phase 1 | Pending |
+| SENS-02 | Phase 1 | Pending |
+| COMM-01 | Phase 1 | Pending |
+| COMM-02 | Phase 1 | Pending |
+| CTRL-01 | Phase 2 | Pending |
+| CTRL-02 | Phase 3 | Pending |
+| VALV-01 | Phase 2 | Pending |
+| VALV-02 | Phase 2 | Pending |
+| DEMO-01 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 9 total
-- Mapped to phases: 0 (phases/roadmap not yet defined)
-- Unmapped: 9 ⚠️
+- Mapped to phases: 9
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 20 de outubro de 2026*
