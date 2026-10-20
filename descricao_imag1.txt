@@ -1,0 +1,13 @@
+## Descrição do Sistema de Irrigação Automatizada com Sensores RS-485
+
+O sistema de irrigação automatizada com sensores RS-485 foi desenvolvido para otimizar o uso da água na agricultura, proporcionando maior eficiência no cultivo e reduzindo a necessidade de intervenção manual. A solução utiliza sensores de solo e de ambiente conectados a um CLP (Controlador Lógico Programável), responsável por processar as informações recebidas e controlar automaticamente a abertura e o fechamento da válvula solenoide.
+
+O sensor de solo RS-485 monitora parâmetros como umidade, temperatura e condutividade elétrica do solo, enquanto o sensor de ar mede a temperatura e a umidade do ambiente. Os dados são transmitidos por meio da comunicação serial RS-485, utilizando o protocolo Modbus RTU, permitindo uma comunicação confiável entre os sensores e o CLP.
+
+Com base nas informações coletadas, o CLP executa a lógica de controle da irrigação. Quando a umidade do solo está abaixo de 30%, o sistema aciona a válvula solenoide, permitindo a passagem da água pelos tubos de irrigação até os gotejadores, que distribuem a água diretamente na região das raízes das plantas. Quando a umidade atinge ou ultrapassa 60%, a válvula é fechada automaticamente, evitando o excesso de irrigação.
+
+O sistema utiliza, portanto, uma faixa de controle de umidade entre 30% e 60%, que pode ser ajustada conforme as necessidades de cada cultura e as características do solo. Essa estratégia contribui para a economia de água, o desenvolvimento saudável das plantas e a redução dos custos operacionais.
+
+Além disso, a integração entre sensores, CLP, válvula solenoide e irrigação por gotejamento permite maior precisão no controle hídrico, monitoramento contínuo das condições ambientais e possibilidade de expansão do sistema para diferentes áreas de cultivo.
+
+Em resumo, o sistema combina automação industrial, comunicação RS-485/Modbus RTU e irrigação inteligente para tornar o processo agrícola mais eficiente, sustentável e confiável.

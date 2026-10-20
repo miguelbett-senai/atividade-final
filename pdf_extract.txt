@@ -1,0 +1,205 @@
+NUM PAGINAS: 6
+
+===== PAGINA 1 =====
+Projetos finais — UC de Automação 
+Industrial  
+Etapa 1 — Descrição do projeto e especificação dos componentes  
+Orientações gerais para todos os grupos  
+A entrega deverá ser realizada em grupo, conforme a composição definida pelo professor.  
+O documento deverá conter os seguintes itens:  
+1. Título do projeto: nome do sistema que será desenvol vido.  
+2. Objetivo: descrição do problema que o projeto pretende resolver e da finalidade do 
+sistema.  
+3. Descrição do funcionamento: explicação de como o sistema deverá funcionar, desde o 
+início da operação até a condição final esperada.  
+4. Componentes necessários: relação dos principais componentes que serão utilizados, 
+incluindo sensores, atuadores, motores, inversores, CLP, fontes e demais dispositivos 
+necessários.  
+5. Especificação técnica dos componentes: identificação das características técnicas 
+necessárias para c ada componente, como faixa de medição, tipo de sinal, tensão de 
+alimentação, interfaces de comunicação, potência e capacidade, conforme aplicável.  
+6. Estratégia de automação: descrição de como o sistema será controlado, indicando as 
+variáveis que serão medida s, as decisões que o CLP deverá tomar e as ações que serão 
+executadas.  
+7. Desenho ou diagrama inicial: representação simplificada do sistema, identificando os 
+principais componentes e suas interligações.  
+8. Dúvidas e necessidades: relação de informações que o gr upo ainda precisa levantar 
+para viabilizar a construção do projeto.  
+Importante: nesta primeira etapa, não é necessário entregar o programa do CLP pronto nem 
+realizar a montagem completa. O objetivo é planejar o projeto, pesquisar os componentes e 
+verificar  sua viabilidade técnica.  
+Grupo 1 — Controle de pressão pneumática  
+Controle automático de pressão  
+Integrantes: Juan, Júlio, José e Murilo Tasca.  
+Componentes principais:  
+ Transdutor de pressão.  
+ Motor trifásico para acionamento do compressor.  
+ Inversor de freq uência.  
+ CLP com entradas e saídas adequadas.  
+ Compressor e sistema pneumático disponível no laboratório.  
+===== PAGINA 2 =====
+ Demais componentes necessários para a montagem e o controle.  
+Desafio do grupo  
+Desenvolver um sistema de automação capaz de monitorar e controlar a press ão de um 
+sistema pneumático, utilizando um transdutor de pressão para medir a variável do processo e 
+um inversor de frequência para controlar a rotação do motor trifásico que aciona o 
+compressor.  
+O grupo deverá definir como o sistema manterá a pressão próx ima do valor desejado, 
+considerando a variação do consumo de ar comprimido.  
+O que deve ser definido nesta etapa  
+1. Descrever como o sistema deverá funcionar quando a pressão estiver abaixo, dentro ou 
+acima da faixa desejada.  
+2. Definir a faixa de pressão necessária para a aplicação e os valores de pressão mínima, 
+desejada e máxima, considerando os limites seguros do equipamento.  
+3. Especificar o transdutor de pressão, incluindo faixa de medição, tipo de saída elétrica e 
+tensão de alimentação.  
+4. Especificar o mo tor trifásico e o inversor de frequência, incluindo potência, tensão, 
+corrente nominal e formas de comando disponíveis.  
+5. Definir como o CLP receberá o sinal do transdutor e enviará o comando ao inversor.  
+6. Indicar se o controle será liga/desliga ou proporcion al, justificando a escolha. Se for 
+utilizado controle proporcional ou PID, explicar como a rotação do compressor deverá 
+variar conforme a pressão medida.  
+7. Elaborar um diagrama inicial com o compressor, o motor, o inversor, o transdutor e o 
+CLP.  
+Questão para  pesquisa: como o sistema deverá reagir quando a pressão atingir o limite 
+máximo permitido ou quando o transdutor apresentar uma falha?  
+Verificação de viabilidade: consultar o professor para verificar a disponibilidade do 
+compressor, do motor trifásico, do  inversor e das condições de conexão no laboratório.  
+Grupo 2 — Controle de nível de tanque  
+Controle automático de nível  
+Integrantes: Ulisses, Davi, Murilo Colonhi e Luiz Otávio.  
+Componentes principais:  
+ Sensor analógico de nível.  
+ Válvula para controlar a en trada de água.  
+ CLP com entrada analógica e saída compatível com a válvula.  
+ Tanque ou reservatório disponível para testes.  
+ Fonte de alimentação e demais componentes necessários.  
+===== PAGINA 3 =====
+Desafio do grupo  
+Desenvolver um sistema de automação capaz de controlar o nível  de água de um tanque. O 
+sistema deverá medir continuamente o nível por meio de um sensor analógico e comandar 
+uma válvula para controlar a entrada de água no reservatório.  
+O objetivo é manter o nível próximo do valor definido pelo operador, evitando 
+trans bordamentos e reduzindo variações desnecessárias durante o funcionamento.  
+O que deve ser definido nesta etapa  
+1. Descrever como o sistema deverá funcionar desde o nível inicial até atingir o nível 
+desejado.  
+2. Definir a capacidade do tanque e a faixa de nível qu e poderá ser utilizada nos testes.  
+3. Especificar o sensor de nível, incluindo faixa de medição, tipo de sinal de saída e 
+tensão de alimentação.  
+4. Especificar a válvula, considerando tensão de alimentação, tipo de acionamento, 
+conexão hidráulica, vazão e pressã o de operação.  
+5. Definir como o CLP interpretará o sinal analógico e comandará a válvula.  
+6. Escolher uma estratégia de controle, como liga/desliga com histerese ou controle 
+proporcional, de acordo com as características da válvula disponível.  
+7. Elaborar um diagrama inicial mostrando o tanque, o sensor, a válvula, o CLP e o 
+caminho da água.  
+Questão para pesquisa: como o sistema poderá impedir o transbordamento caso o sensor de 
+nível apresente uma falha?  
+Verificação de viabilidade: conferir com o professor o t anque disponível, o tipo de válvula, as 
+conexões hidráulicas e a compatibilidade dos sinais elétricos com o CLP.  
+Grupo 3 — Esteira para separar peças por 
+cores  
+Sistema automatizado de classificação de peças  
+Integrantes: Hyago, Samuel, Richard e João.  
+Compo nentes principais:  
+ Sensores de cor.  
+ Esteira transportadora.  
+ Motor trifásico e inversor de frequência.  
+ Atuadores pneumáticos para separação das peças.  
+ Sensores de presença e de posição, conforme a necessidade.  
+ CLP e demais componentes de comando.  
+Desafio do  grupo  
+===== PAGINA 4 =====
+Desenvolver um sistema automatizado capaz de identificar peças de diferentes cores durante o 
+transporte em uma esteira e direcioná -las para locais específicos por meio de atuadores 
+pneumáticos.  
+O sistema deverá realizar a detecção das cores, determi nar o destino de cada peça e acionar o 
+mecanismo de separação no momento adequado, mantendo a operação coordenada com o 
+movimento da esteira.  
+O que deve ser definido nesta etapa  
+1. Definir quais cores serão reconhecidas e quantas categorias de peças serão sep aradas.  
+2. Descrever o percurso das peças, desde a entrada na esteira até o local de separação.  
+3. Especificar os sensores de cor, incluindo as cores detectáveis, distância de leitura, 
+tempo de resposta, tipo de saída e alimentação.  
+4. Especificar o motor trifásico  e o inversor de frequência, considerando potência, 
+tensão, corrente e possibilidade de ajuste da velocidade.  
+5. Definir a quantidade de atuadores pneumáticos necessária e a função de cada um.  
+6. Identificar os sensores de presença e de posição necessários para sincronizar a 
+detecção da cor com o acionamento dos atuadores.  
+7. Explicar como o CLP identificará cada peça e determinará o instante correto para 
+separá -la. 
+8. Elaborar um desenho inicial da esteira, indicando a posição dos sensores, dos 
+atuadores e dos pontos de saída das peças.  
+Questão para pesquisa: como o sistema garantirá que o atuador correto seja acionado para a 
+peça identificada, mesmo quando a esteira estiver em movimento?  
+Verificação de viabilidade: conferir a disponibilidade dos sensores de cor, da esteira, do 
+motor, do inversor, dos cilindros pneumáticos e das válvulas de acionamento.  
+Grupo 4 — Irrigação automática  
+Sistema de irrigação automatizada  
+Integrantes: Mighel Bett, Miguel Lorenzoni, Artur e Luiz Gustavo.  
+Componentes principais:  
+ Sensores com  comunicação pelo protocolo RS -485. 
+ Válvula para controlar a entrada de água.  
+ CLP ou controlador compatível com a comunicação dos sensores.  
+ Fonte de alimentação e infraestrutura hidráulica.  
+ Demais componentes necessários para a automação.  
+Desafio do grupo  
+Desenvolver um sistema de irrigação automática capaz de utilizar informações fornecidas por 
+sensores com comunicação RS -485 para determinar quando a irrigação deverá ser acionada.  
+===== PAGINA 5 =====
+O grupo deverá escolher uma variável relevante para a necessidade de irrigaç ão, definir como 
+os dados serão recebidos pelo controlador e estabelecer a lógica para abrir e fechar a válvula 
+de água.  
+O que deve ser definido nesta etapa  
+1. Descrever o ambiente em que o sistema será utilizado, como um jardim, uma horta ou 
+uma área de cult ivo. 
+2. Definir qual variável será monitorada pelos sensores. Por exemplo, umidade do solo, 
+temperatura ou outra variável pertinente à aplicação.  
+3. Especificar o sensor escolhido, incluindo faixa de medição, alimentação, protocolo de 
+comunicação, parâmetros de comunicação e formato dos dados transmitidos.  
+4. Verificar se o sensor utiliza Modbus RTU sobre RS -485 ou outro protocolo. RS -485 
+define as características elétricas da comunicação, não necessariamente o formato das 
+mensagens.  
+5. Verificar como o CLP receberá os  dados, considerando a disponibilidade de uma 
+interface RS -485 ou de um módulo conversor compatível.  
+6. Especificar a válvula de água, considerando tensão, acionamento, vazão, pressão de 
+operação e conexões hidráulicas.  
+7. Definir os critérios para iniciar e int erromper a irrigação, incluindo valores de 
+referência, temporização e condições de segurança.  
+8. Elaborar um diagrama inicial mostrando os sensores, o barramento de comunicação, o 
+controlador, a válvula e o circuito hidráulico.  
+Questão para pesquisa: como o s istema identificará uma falha de comunicação com o sensor e 
+garantirá que a válvula assuma uma condição segura?  
+Verificação de viabilidade: confirmar com o professor quais sensores RS -485 estão 
+disponíveis, seus protocolos, o modelo do controlador e a comp atibilidade da válvula com as 
+saídas existentes.  
+Entrega de hoje — checklist para os grupos  
+Conferência antes de entregar  
+0 de 7  
+Título e objetivo do projeto definidos  
+Funcionamento do sistema descrito  
+Componentes principais identificados  
+Especificações técnicas pesquisadas ou registradas como pendentes  
+Estratégia inicial de automação definida  
+Desenho ou diagrama simplificado elaborado  
+Dúvidas e necessidades pa ra a montagem registradas  
+Formato sugerido: um documento por grupo, em PDF ou Word, com texto organizado e 
+diagrama legível. Quando não for possível identificar um modelo exato de componente nesta 
+===== PAGINA 6 =====
+primeira etapa, o grupo deverá registrar as características  necessárias e indicar o que precisa 
+ser confirmado com o professor.  
+Planejamento de infraestrutura e recursos do laboratório  
+Além do documento, recomendo que o professor faça uma verificação de viabilidade dos 
+projetos antes de autorizar a montagem.  
+ Compr essor e acionamento: verificar no laboratório de elétrica e manutenção a 
+disponibilidade do compressor, do motor trifásico e do inversor de frequência, além 
+das condições de acionamento e segurança.  
+ Tanque e válvula hidráulica: verificar as tubulações disp oníveis nas cisternas, medir 
+seus diâmetros e conferir as conexões necessárias para selecionar uma válvula 
+compatível.  
+ Sensores e CLP: conferir as entradas e saídas disponíveis, os tipos de sinais analógicos 
+e as interfaces de comunicação.  
+ Bancadas e mater iais: levantar previamente os componentes compartilhados entre os 
+grupos para evitar conflitos de uso durante a montagem.  
+ 

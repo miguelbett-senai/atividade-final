@@ -1,0 +1,10 @@
+# GSD tooling (local install, not project source)
+.opencode/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Temp
+*.tmp
