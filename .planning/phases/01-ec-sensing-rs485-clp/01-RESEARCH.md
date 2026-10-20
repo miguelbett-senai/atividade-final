@@ -322,7 +322,7 @@ WatchdogTime a definir (sugestão: 3× tempo de polling + margem).
 | A7 | Terminação 120 Ω suficiente; bias interno do CB 1241 | Architecture | Comunicação intermitente em campo |
 | A8 | TIA Portal V20 suporta o firmware do módulo disponível | Environment | Pode exigir atualização de firmware |
 
-## Open Questions
+## Open Questions (RESOLVED — intentionally deferred to deliverable)
 
 1. **Tempo de varredura (scan time)** - A cada quanto o CLP lê os sensores? (1 s / 5 s / 10 s / 30 s / outro) - não definido. Recomendação de pesquisa: 1-5 s (tempo de resposta do sensor ≤ 1 s para EC; polling mais rápido não agrega). [ASSUMED]
 2. **Critério de falha de comunicação** - quantas tentativas sem resposta antes de declarar falha e fechar a válvula? - não definido. Recomendação: 3 tentativas consecutivas com timeout; combinar com watchdog de 3× tempo de polling.
